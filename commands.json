@@ -1,0 +1,92 @@
+{
+     "commandsList": [
+          {
+               "name": "help",
+               "description": "Mostra a lista de comandos da Peperinha"
+          },
+          {
+               "name": "commands",
+               "description": "Mostra a lista de comandos da Peperinha"
+          },
+          {
+               "name": "ping",
+               "description": "Responde com pong"
+          },
+          {
+               "name": "echo",
+               "description": "Repete o que você falar",
+               "options": [{
+                    "name": "frase",
+                    "type": "STRING",
+                    "description": "frase que será repetidada",
+                    "required": true
+               }]
+          },
+          {
+               "name": "avatar",
+               "description": "Mostra o avatar de um usuário",
+               "options": [{
+                    "name": "user",
+                    "type": "USER",
+                    "description": "Usuário para pegar o avatar",
+                    "required": true
+               }]
+          },
+          {
+               "name": "calc",
+               "description": "Realiza uma operação matemática",
+               "options": [{
+                    "name": "expression",
+                    "type": "STRING",
+                    "description": "calculo que será realizado",
+                    "required": true 
+               }]
+          },
+          {
+               "name": "kick",
+               "description": "Expulsa um usuário",
+               "options": [{
+                    "name": "user",
+                    "type": "USER",
+                    "description": "Usuário a expulsar",
+                    "required": true
+               }]
+          },
+          {
+               "name": "ban",
+               "description": "Bane um usuário",
+               "options": [{
+                    "name": "user",
+                    "type": "USER",
+                    "description": "Usuário a banir",
+                    "required": true
+               }]
+          },
+          {
+               "name": "roll",
+               "description": "Rola um dado",
+               "options": [{
+                    "name": "max",
+                    "description": "Valor máximo",
+                    "type": "INTEGER",
+                    "required": true
+               },
+               {
+                    "name": "min",
+                    "description": "Valor mínimo",
+                    "type": "INTEGER",
+                    "required": false
+               }]
+          },
+          {
+               "name": "zuar",
+               "description": "zOa UmA fRaSe TiPo AsSiM",
+               "options": [{
+                    "name": "frase",
+                    "type": "STRING",
+                    "description": "Frase que ira ser transformada",
+                    "required": true
+               }]
+          }
+     ]
+}
