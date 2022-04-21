@@ -1,92 +1,90 @@
 {
      "commandsList": [
           {
-               "name": "help",
-               "description": "Mostra a lista de comandos da Peperinha"
+               "name"        : "ping",
+               "description" : "Pong!"
           },
           {
-               "name": "commands",
-               "description": "Mostra a lista de comandos da Peperinha"
+               "name"        : "avatar",
+               "description" : "Show the avatar from a user you want",
+               "options" : [
+                    {
+                         "name"        : "user",
+                         "description" : "User to show the avatar from",
+                         "type"        : 6,
+                         "required"    : true
+                    }
+               ]
           },
           {
-               "name": "ping",
-               "description": "Responde com pong"
+               "name": "rpgdice",
+               "type": 1,
+               "description": "Roll a RPG dice",
+               "options": [
+                   {
+                       "name"       : "dice",
+                       "description": "Type of dice you want to roll",
+                       "type"       : 10,
+                       "required"   : true,
+                       "choices": [
+                              {
+                                   "name"  : "d4",
+                                   "value" : 4
+                              },
+                              {
+                                   "name"  : "d6",
+                                   "value" : 6
+                              },
+                              {
+                                   "name"  : "d8",
+                                   "value" : 8
+                              },
+                              {
+                                   "name"  : "d10",
+                                   "value" : 10
+                              },
+                              {
+                                   "name"  : "d12",
+                                   "value" : 12
+                              },
+                              {
+                                   "name"  : "d20",
+                                   "value" : 20
+                              }
+                       ]
+                   },
+                   {
+                        "name"        : "modifier",
+                        "type"        : 10,
+                        "description" : "Dice modifier",
+                        "required"    : false
+                   }
+               ]
           },
           {
-               "name": "echo",
-               "description": "Repete o que você falar",
-               "options": [{
-                    "name": "frase",
-                    "type": "STRING",
-                    "description": "frase que será repetidada",
-                    "required": true
-               }]
+               "name"        : "calc",
+               "description" : "Execute a expression",
+               "options" : [
+                    {
+                         "name"        : "expression",
+                         "description" : "Expression to be executed",
+                         "type"        : 3,
+                         "required"    : true
+                    }
+               ]
           },
           {
-               "name": "avatar",
-               "description": "Mostra o avatar de um usuário",
-               "options": [{
-                    "name": "user",
-                    "type": "USER",
-                    "description": "Usuário para pegar o avatar",
-                    "required": true
-               }]
-          },
-          {
-               "name": "calc",
-               "description": "Realiza uma operação matemática",
-               "options": [{
-                    "name": "expression",
-                    "type": "STRING",
-                    "description": "calculo que será realizado",
-                    "required": true 
-               }]
-          },
-          {
-               "name": "kick",
-               "description": "Expulsa um usuário",
-               "options": [{
-                    "name": "user",
-                    "type": "USER",
-                    "description": "Usuário a expulsar",
-                    "required": true
-               }]
-          },
-          {
-               "name": "ban",
-               "description": "Bane um usuário",
-               "options": [{
-                    "name": "user",
-                    "type": "USER",
-                    "description": "Usuário a banir",
-                    "required": true
-               }]
-          },
-          {
-               "name": "roll",
-               "description": "Rola um dado",
-               "options": [{
-                    "name": "max",
-                    "description": "Valor máximo",
-                    "type": "INTEGER",
-                    "required": true
-               },
-               {
-                    "name": "min",
-                    "description": "Valor mínimo",
-                    "type": "INTEGER",
-                    "required": false
-               }]
-          },
-          {
-               "name": "zuar",
-               "description": "zOa UmA fRaSe TiPo AsSiM",
-               "options": [{
-                    "name": "frase",
-                    "type": "STRING",
-                    "description": "Frase que ira ser transformada",
-                    "required": true
-               }]
+               "name"        : "choose",
+               "type"        : 1,
+               "description" : "Choose something between a list",
+               "options" : [
+                    {
+                         "name"        : "to_choose",
+                         "description" : "List of choices [Separate items with a ,]",
+                         "type"        : 3,
+                         "required"    : true
+                    }
+               ]
           }
      ]
 }
