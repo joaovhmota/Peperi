@@ -1,3 +1,5 @@
+console.time('peperi');
+
 import Discord, { Intents, GuildMember, Guild, BanOptions } from "discord.js";
 import commands from "./commands.json";
 import dotenv from "dotenv";
@@ -124,6 +126,71 @@ client.on('interactionCreate', async (interaction) => {
                     });
                break;
                
+          case 'userinfo':
+               var toGetuser = interaction.options.getMember("user") as GuildMember;
+               var userInfoEmbed = new Discord.MessageEmbed()
+                    .setColor("#ffffff")
+                    .setFooter(interaction.user.tag)
+                    .setTimestamp(new Date().getTime())
+                    .setTitle(`📋 Informações do usuário:`)
+                    .setThumbnail(`${toGetuser.user.avatarURL({ format: "png", dynamic: true, size: 1024 })}`)
+                    .addFields(
+                         [
+                              {
+                                   name  : "🎭 Nome | Apelido: ",
+                                   value : `${toGetuser.user.username} | ${toGetuser.nickname ?? "<Sem apelido> "}`,
+                              },
+                              {
+                                   name  : "🆔 ID: ",
+                                   value : `${toGetuser.user.id}`,
+                              },
+                              {
+                                   name  : "📅 Conta criada em:",
+                                   value : `${toGetuser.user.createdAt.toLocaleString()}`,
+                              }
+                         ]
+                    );
+               
+               interaction.reply({
+                    embeds: [userInfoEmbed],
+                    ephemeral: false
+               });
+               break;
+
+          case 'serverinfo':
+               var toGetServer = interaction.guild as Guild;
+               var serverInfoEmbed = new Discord.MessageEmbed()
+                    .setColor("#ffffff")
+                    .setFooter(interaction.user.tag)
+                    .setTimestamp(new Date().getTime())
+                    .setTitle(`📋 Informações do servidor:`)
+                    .setThumbnail(`${toGetServer.iconURL({ format: "png", dynamic: true, size: 1024 })}`)
+                    .addFields(
+                         [
+                              {
+                                   name  : "🎭 Nome: ",
+                                   value : `${toGetServer.name}`,
+                              },
+                              {
+                                   name  : "🆔 ID: ",
+                                   value : `${toGetServer.id}`,
+                              },
+                              {
+                                   name  : "📅 Criado em:",
+                                   value : `${toGetServer.createdAt.toLocaleString()}`,
+                              },
+                              {
+                                   name  : "🗿 Membros:",
+                                   value : `${toGetServer.memberCount}`,
+                              }
+                         ]
+                    );
+               interaction.reply({
+                    embeds: [serverInfoEmbed],
+                    ephemeral: false
+               });
+               break;
+          
           default:
                break;
      }
@@ -135,3 +202,5 @@ client.on('messageCreate', async (message) => {
 });
 
 client.login( process.env.TOKEN );
+
+console.timeEnd('peperi');

@@ -50,6 +50,10 @@
                               {
                                    "name"  : "d20",
                                    "value" : 20
+                              },
+                              {
+                                   "name" : "d100",
+                                   "value" : 100
                               }
                        ]
                    },
@@ -85,6 +89,22 @@
                          "required"    : true
                     }
                ]
+          },
+          {
+               "name"        : "userinfo",
+               "description" : "Show the user's info",
+               "options" : [
+                    {
+                         "name"        : "user",
+                         "description" : "User to show the info from",
+                         "type"        : 6,
+                         "required"    : true
+                    }
+               ]
+          },
+          {
+               "name"        : "serverinfo",
+               "description" : "Show the server information"
           }
      ]
 }
