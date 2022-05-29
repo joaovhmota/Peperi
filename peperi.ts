@@ -4,7 +4,6 @@ import Discord, { Intents, GuildMember, Guild, BanOptions } from "discord.js";
 import commands from "./commands.json";
 import dotenv from "dotenv";
 dotenv.config();
-var afkUsers : Array<GuildMember> = [];
 
 const client = new Discord.Client({
      intents: [
