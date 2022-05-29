@@ -1,4 +1,3 @@
-// A
 console.time('peperi');
 
 import Discord, { Intents, GuildMember, Guild, BanOptions } from "discord.js";
