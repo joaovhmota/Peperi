@@ -1,5 +1,5 @@
 console.time('peperi');
-
+// A 
 import Discord, { Intents, GuildMember, Guild, BanOptions } from "discord.js";
 import commands from "./commands.json";
 import dotenv from "dotenv";
